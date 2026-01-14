@@ -23,7 +23,7 @@ export default function Contact() {
 
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/mirzausamaikram"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-all"
@@ -34,7 +34,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/usama-ikram-bb08991b0/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-all"
@@ -45,7 +45,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="mailto:hello@climateloop.hk"
+              href="mailto:mirzausamaikram@gmail.com"
               className="flex items-center gap-2 px-6 py-3 bg-thermal-cool hover:bg-thermal-cool/80 text-slate-900 font-bold rounded-lg transition-all"
             >
               <Mail className="w-5 h-5" />

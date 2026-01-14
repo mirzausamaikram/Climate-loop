@@ -18,18 +18,39 @@ export default function LiveDataBanner() {
 
   const fetchLiveData = async () => {
     try {
-      const [weatherRes, electricityRes] = await Promise.all([
-        fetch('/api/weather'),
-        fetch('/api/electricity'),
-      ])
+      // Fetch real Hong Kong weather from OpenWeather API
+      const API_KEY = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
+      let weatherData
+      
+      if (API_KEY) {
+        // Real API call
+        const weatherResponse = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=Hong%20Kong&appid=${API_KEY}&units=metric`
+        )
+        const weatherJson = await weatherResponse.json()
+        
+        if (weatherResponse.ok) {
+          weatherData = {
+            temperature: weatherJson.main.temp,
+            humidity: weatherJson.main.humidity,
+          }
+        } else {
+          throw new Error('API call failed')
+        }
+      } else {
+        // Fallback to local API
+        const weatherRes = await fetch('/api/weather')
+        const weather = await weatherRes.json()
+        weatherData = weather.success ? weather.data : null
+      }
 
-      const weather = await weatherRes.json()
+      const electricityRes = await fetch('/api/electricity')
       const electricity = await electricityRes.json()
 
-      if (weather.success && electricity.success) {
+      if (weatherData && electricity.success) {
         setData({
-          temperature: Math.round(weather.data.temperature),
-          humidity: Math.round(weather.data.humidity),
+          temperature: Math.round(weatherData.temperature),
+          humidity: Math.round(weatherData.humidity),
           electricityRate: electricity.data.current_rate,
           peakHour: electricity.data.peak_hours.includes(
             new Date().getHours().toString().padStart(2, '0')
