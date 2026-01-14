@@ -61,8 +61,8 @@ export default function Contact() {
           viewport={{ once: true }}
           className="mt-12 text-center text-gray-500"
         >
-          <p>© 2026 Climate Loop. Built with Next.js 14, TypeScript & Three.js</p>
-          <p className="mt-2">A portfolio project demonstrating full-stack development & Hong Kong market insight</p>
+          <p>© 2026 Climate Loop. All rights reserved.</p>
+          <p className="mt-2">Developed by Usama Ikram</p>
         </motion.div>
       </div>
     </section>

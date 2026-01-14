@@ -5,7 +5,6 @@ import Solution from '@/components/Solution'
 import ThermalVisualization from '@/components/ThermalVisualization'
 import SavingsCalculator from '@/components/SavingsCalculator'
 import APIDemo from '@/components/APIDemo'
-import TechStack from '@/components/TechStack'
 import CaseStudy from '@/components/CaseStudy'
 import Contact from '@/components/Contact'
 
@@ -19,7 +18,6 @@ export default function Home() {
       <ThermalVisualization />
       <SavingsCalculator />
       <APIDemo />
-      <TechStack />
       <CaseStudy />
       <Contact />
     </main>

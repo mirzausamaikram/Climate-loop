@@ -5,24 +5,6 @@ import { Code2, Database, Cpu, Zap } from 'lucide-react'
 
 const techStack = [
   {
-    category: 'Frontend',
-    icon: Code2,
-    technologies: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Three.js', 'Framer Motion'],
-    color: 'thermal-cool',
-  },
-  {
-    category: 'Backend',
-    icon: Cpu,
-    technologies: ['Next.js API Routes', 'Python ML Models', 'Go Microservices', 'WebSockets'],
-    color: 'energy-green',
-  },
-  {
-    category: 'Database & Storage',
-    icon: Database,
-    technologies: ['PostgreSQL', 'Prisma ORM', 'TimescaleDB', 'Redis'],
-    color: 'thermal-hot',
-  },
-  {
     category: 'AI & Optimization',
     icon: Zap,
     technologies: ['Graph Neural Networks', 'Time Series Forecasting', 'Reinforcement Learning', 'Energy Matching Algorithm'],
@@ -41,9 +23,6 @@ export default function TechStack() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold mb-4 text-white">
-            Technical Architecture
-          </h2>
           <p className="text-xl text-gray-400">
             Production-ready stack built for scale and real-time performance
           </p>
